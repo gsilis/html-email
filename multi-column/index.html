@@ -124,16 +124,21 @@
 			<td bgcolor="#848484">
 				<table width="298" cellpadding="0" cellspacing="0" align="left">
 					<tr class="horiz-padded">
-						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;" align="center">
-							<div class="retina-enabled retina-sun" style="margin-top: -30px;"><img src="media/stacked-sun.png" alt="Sun" width="94" /></div>
+						<!--
+						We pad this container, but put a negative margin on it's first child.
+						This is done in case the client does not support negative margins,
+						so that the graphic does not appear flush with the top of the container.
+						 -->
+						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px; padding-top: 20px;" align="center">
+							<div class="retina-enabled retina-sun" style="margin-top: -50px;"><img src="media/stacked-sun.png" alt="Sun" width="94" /></div>
 							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">For clients that support negative margins, you can have graphics overlap their containers. </div>
 						</td>
 					</tr>
 				</table>
 				<table width="298" cellpadding="0" cellspacing="0" align="right">
 					<tr class="horiz-padded">
-						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;" align="center">
-							<div class="retina-enabled retina-sun"><img src="media/stacked-moon.png" alt="Sun" width="94" /></div>
+						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px; padding-top: 20px;" align="center">
+							<div class="retina-enabled retina-moon"><img src="media/stacked-moon.png" alt="Moon" width="94" /></div>
 							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">But make sure the design still looks good if the graphic cannot be pushed up via CSS. </div>
 						</td>
 					</tr>
@@ -156,8 +161,8 @@
 
 				<table cellpadding="0" cellspacing="0" align="left" width="298">
 					<tr class="horiz-padded">
-						<td align="center" style="padding-left: 50px; padding-right: 50px;">
-							<div class="retina-enabled retina-sans-serif" style="margin-top: -20px;"><img src="media/typography-callout-sans-serif.png" alt="Sans-serif" width="94" /></div>
+						<td align="center" style="padding-left: 50px; padding-right: 50px; padding-top: 20px;">
+							<div class="retina-enabled retina-sans-serif" style="margin-top: -50px;"><img src="media/typography-callout-sans-serif.png" alt="Sans-serif" width="94" /></div>
 						</td>
 					</tr>
 					<tr>
@@ -166,7 +171,6 @@
 							<ul style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center; padding-left: 0; padding-right: 0; padding-top: 10px; padding-bottom: 10px; list-style-position: inside; text-align: left; padding-left: 20px; padding-right: 20px; margin-top: 0; margin-bottom: 0;">
 								<li>Helvetica</li>
 								<li>Arial</li>
-								<li>Sans-serif</li>
 							</ul>
 						</td>
 					</tr>
@@ -174,8 +178,8 @@
 
 				<table cellpadding="0" cellspacing="0" align="right" width="298">
 					<tr class="horiz-padded">
-						<td align="center" style="padding-left: 50px; padding-right: 50px;">
-							<div class="retina-enabled retina-serif" style="margin-top: -20px;"><img src="media/typography-callout-serif.png" alt="Sans-serif" width="94" /></div>
+						<td align="center" style="padding-left: 50px; padding-right: 50px; padding-top: 20px;">
+							<div class="retina-enabled retina-serif" style="margin-top: -50px;"><img src="media/typography-callout-serif.png" alt="Sans-serif" width="94" /></div>
 						</td>
 					</tr>
 					<tr>
@@ -183,7 +187,6 @@
 							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em;">Serif</div>
 							<ul style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center; padding-left: 0; padding-right: 0; padding-top: 10px; padding-bottom: 10px; list-style-position: inside; text-align: left; padding-left: 20px; padding-right: 20px; margin-top: 0; margin-bottom: 0;">
 								<li>Times</li>
-								<li>Serif</li>
 							</ul>
 						</td>
 					</tr>
