@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+	<!--
+	We make this email SCRICT since some clients can inject that
+	doctype into our source.
+	-->
+
+	<title>Email Title</title>
+	<!-- Initial scale for mobile devices -->
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+	<!-- Fix for Windows 8 to force IE10 rendering, this enables CSS3 support! -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- For the clients that support them, media queries! -->
+	<style>
+
+		/* Media query for any width less than 600px */
+		@media all and (max-width: 600px) {
+
+			/*
+			Use the attribute selectors elem[attr=val] so that
+			Yahoo Mail doesn't just apply these styles even
+			though the conditions for the media query weren't met
+			http://jackosborne.com/articles/responsive-email-design#mediaqueriesandcss
+			*/
+
+			td.scaled > img {
+				width: 100%;
+			}
+
+			table[class=flexible-table] {
+				width: 100%;
+			}
+
+			td[class='scaled retina-enabled retina-graphic']  > img.regular-graphic {
+				display: none !important;
+			}
+
+			td[class='scaled retina-enabled retina-graphic']  > img.retina-graphic {
+				display: inline-block !important;
+			}
+
+			tr[class='horiz-padded'] > td {
+				padding-left: 20px !important;
+				padding-right: 20px !important;
+			}
+
+			tr[class='stacked-sections'] > td > table {
+				width: 100%;
+			}
+
+		}
+
+		/* Media query for high-density displays */
+		@media all and (min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5) {
+
+			/* Switch out image containers with their retina equivalents */
+			td.retina-enabled {
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+
+			td[class='retina-enabled retina-logo'] > img {
+				visibility: hidden;
+			}
+
+			td[class='retina-enabled retina-logo'] {
+				background-image: url(media/logo@2x.png);
+				background-size: 130px 100px;
+			}
+
+		}
+
+	</style>
+
+</head>
+<!-- Remove default padding and margin on the body -->
+<body style="padding: 0; margin: 0;">
+<table cellpadding="0" cellspacing="0" width="100%" border="0" bgcolor="#333333">
+<tr>
+<td align="center">
+
+	<table cellpadding="0" cellspacing="0" width="600" border="0" style="max-width: 600px;" class="flexible-table">
+		<tr>
+			<td align="center" class="retina-enabled retina-logo">
+				<img src="media/logo.png" alt="Snowflake Logo" align="absbottom" />
+			</td>
+		</tr>
+		<tr>
+		 	<td align="center" class="scaled retina-enabled retina-graphic">
+				<img src="media/header-graphic.jpg" alt="Graphic" class="regular-graphic" align="absbottom" />
+				<img src="media/header-graphic-mobile.jpg" alt="Graphic" style="display: none;" class="retina-graphic" align="absbottom" />
+			</td>
+		</tr>
+		<tr class="horiz-padded">
+			<td align="center" bgcolor="#ffffff" style="padding-left: 50px; padding-right: 50px;">
+				<div style="display: inline-block; padding-right: 8px; padding-top: 30px;"><img src="media/header-01@2x.jpg" alt="Custom Font" width="252"></div>
+				<div style="display: inline-block; padding-top: 30px;"><img src="media/header-02@2x.jpg" alt="Header" width="150"></div>
+			</td>
+		</tr>
+		<tr class="horiz-padded">
+			<td style="padding-left: 50px; padding-right: 50px; padding-top: 30px; padding-bottom: 50px;" bgcolor="#ffffff">
+				<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #000000; line-height: 1.4em; text-align: center;">This email is meantto showcase how emails can be designed for different mediums. Taking into account things like lack of image support, lack of support of certain style capabilities, and device dimensions.</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="padding-left: 50px; padding-right: 50px; padding-top: 30px;" align="center" bgcolor="#000000">
+				<img src="media/stacked-header@2x.png" alt="Stacked Sections" width="228" />
+			</td>
+		</tr>
+		<tr class="horiz-padded">
+			<td style="padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 50px;" bgcolor="#000000">
+				<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">On devices or machines that are can display emails wide enough, you can show content side by side - taking advantage of the horizontal space that exists. On narrower screens, the content can be stacked. Using a media query, you can force the stacked content to fill the available width.</div>
+			</td>
+		</tr>
+		<tr class="stacked-sections">
+			<td bgcolor="#848484">
+				<table width="298" cellpadding="0" cellspacing="0" align="left">
+					<tr class="horiz-padded">
+						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;" align="center">
+							<div class="retina-enabled retina-sun" style="margin-top: -30px;"><img src="media/stacked-sun.png" alt="Sun" width="94" /></div>
+							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">For clients that support negative margins, you can have graphics overlap their containers. </div>
+						</td>
+					</tr>
+				</table>
+				<table width="298" cellpadding="0" cellspacing="0" align="right">
+					<tr class="horiz-padded">
+						<td style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;" align="center">
+							<div class="retina-enabled retina-sun"><img src="media/stacked-moon.png" alt="Sun" width="94" /></div>
+							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">But make sure the design still looks good if the graphic cannot be pushed up via CSS. </div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#ffffff" align="center">
+				<div style="display: inline-block; padding-top: 30px; padding-right: 8px;"><img src="media/typography-header-wide-01@2x.png" alt="Wide non-standard" align="absbottom" width="260" /></div>
+				<div style="display: inline-block; padding-top: 30px"><img src="media/typography-header-wide-02@2x.png" alt="font head text" align="absbottom" width="202" /></div>
+			</td>
+		</tr>
+		<tr class="horiz-padded">
+			<td bgcolor="#ffffff" style="padding-left: 50px; padding-right: 50px; padding-top: 30px; padding-bottom: 50px;">
+				<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #000000; line-height: 1.4em; text-align: center;">If wide image-based text objects must be used, make sure you design them for non-squeezed layout @600px and mobile layout @~300px. Also, make sure to try out all standard fonts to ensure they still give the desired look and feel.</div>
+			</td>
+		</tr>
+		<tr class="stacked-sections">
+			<td bgcolor="#848484">
+
+				<table cellpadding="0" cellspacing="0" align="left" width="298">
+					<tr class="horiz-padded">
+						<td align="center" style="padding-left: 50px; padding-right: 50px;">
+							<div class="retina-enabled retina-sans-serif" style="margin-top: -20px;"><img src="media/typography-callout-sans-serif.png" alt="Sans-serif" width="94" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;">
+							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em;">Sans-Serif</div>
+							<ul style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center; padding-left: 0; padding-right: 0; padding-top: 10px; padding-bottom: 10px; list-style-position: inside; text-align: left; padding-left: 20px; padding-right: 20px; margin-top: 0; margin-bottom: 0;">
+								<li>Helvetica</li>
+								<li>Arial</li>
+								<li>Sans-serif</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+
+				<table cellpadding="0" cellspacing="0" align="right" width="298">
+					<tr class="horiz-padded">
+						<td align="center" style="padding-left: 50px; padding-right: 50px;">
+							<div class="retina-enabled retina-serif" style="margin-top: -20px;"><img src="media/typography-callout-serif.png" alt="Sans-serif" width="94" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;">
+							<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em;">Serif</div>
+							<ul style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center; padding-left: 0; padding-right: 0; padding-top: 10px; padding-bottom: 10px; list-style-position: inside; text-align: left; padding-left: 20px; padding-right: 20px; margin-top: 0; margin-bottom: 0;">
+								<li>Times</li>
+								<li>Serif</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="retina-enabled retina-logo" style="padding-bottom: 50px;">
+				<img src="media/logo.png" alt="Snowflake Logo" align="absbottom" />
+				<div style="font-family: Helvetica,Arial,sans-serif; font-size: 1em; color: #ffffff; line-height: 1.4em; text-align: center;">123 Some Drive<br/>Town, ST 10001</div>
+			</td>
+		</tr>
+	</table>
+
+</td>
+</tr>
+</table>
+</body>
+</html>
